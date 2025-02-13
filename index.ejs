@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<div class="hero">
+
+    <div class="text">
+        <h1>KCRI COLLEGE</h1>
+        <h2>NoticeHub</h2>
+    </div>
+    <h3><%=success%></h3>
+    <div class="page">
+        <form  action="/notice/new"><button>new</button></form>
+                <div class="notice-panel">
+            <div class="notice">
+                <div class="n"><a href="/">All Notice</a></div>
+                <div class="n"><a href="/">New Notice</a></div>
+                <div class="n"><a href="/">Old Notice</a></div>
+            </div>
+        </div>  
+        <div class="allnotice">
+            <% for (let notice of notices) { %>
+                <div class="block">
+                    <h5><%=notice.title%></h5>
+                    <div>
+                        <a href="/notice/<%= notice._id %>"><%= notice.description %></a>
+                        <% if (notice.date) { %>
+                            <b><%= notice.date.toLocaleString('en-US', { weekday: 'long' }) %> <%= notice.date.toLocaleString('en-US', { month: '2-digit' }) %>-<%= notice.date.toLocaleString('en-US', { day: '2-digit' }) %>-<%= notice.date.toLocaleString('en-US', { year: '2-digit' }) %></b>
+                        
+                        <% } %>
+                    </div>
+                  
+                    <a href="/notice/<%= notice._id %>/edit">Edit</a>
+                    <a href="/notice/<%= notice._id %>/delete">Delete</a>
+                </div>
+                <br/>
+            <% } %>
+        </div>
+    </div>
+    </div>
+</body>
+</html>

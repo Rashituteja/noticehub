@@ -1,0 +1,20 @@
+.hero{
+    display: flex;
+   align-items: center;
+   position: relative;
+   background-image: url("https://img.freepik.com/free-vector/white-abstract-background_23-2148806276.jpg?semt=ais_hybrid");
+   background-size: cover;
+   background-repeat: no-repeat;
+   min-height: 100vh;
+   min-width: 100vw;
+   justify-content: center;
+   font-family: montserrat;
+   
+}
+
+.image {
+    box-shadow: 15px 15px 15px 15px rgba(37, 34, 34, 0.5);
+    height: 600px;
+    width: 500px;
+}
+
